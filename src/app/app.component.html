@@ -1,0 +1,8 @@
+<mat-toolbar class="header mat-elevation-z8" color="primary">
+  <span>Makerplace</span>
+</mat-toolbar>
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+  <app-listing fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let listing of listings"
+    [listing]=listing>
+  </app-listing>
+</div>

@@ -1,0 +1,13 @@
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+@include mat-core();
+
+$makerplace-typography: mat-typography-config(
+  $font-family: 'Rubik, sans-serif'
+);
+
+@include angular-material-typography($makerplace-typography);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Rubik", sans-serif, "Helvetica Neue", sans-serif; }
