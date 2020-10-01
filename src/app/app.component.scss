@@ -1,11 +1,35 @@
-.header {
+@import '../theme.scss';
+
+.app-header {
+    background-color: white;
+    position: sticky;
     height: 100px;
 }
 
-.content {
+.app-content {
     padding: 16px;
 }
 
-.content > mat-card {
+.app-content > mat-card {
     width: 200px;
+}
+
+.app-logo {
+  color: $indigo;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.app-button {
+  font-size: 1rem;
+}
+
+.app-register-button {
+  border-radius: 8px;
+  border-color: $indigo;
+  font-weight: 600;
+}
+
+.app-search {
+    width: 100%;
 }

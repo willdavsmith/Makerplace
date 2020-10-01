@@ -8,13 +8,19 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ListingComponent } from './listing/listing.component';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListingComponent
+    ListingComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,11 @@ import { ListingComponent } from './listing/listing.component';
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

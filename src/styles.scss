@@ -11,3 +11,6 @@ $makerplace-typography: mat-typography-config(
 
 html, body { height: 100%; }
 body { margin: 0; font-family: "Rubik", sans-serif, "Helvetica Neue", sans-serif; }
+.nohover .mat-button-focus-overlay {
+  background-color: transparent;
+}
