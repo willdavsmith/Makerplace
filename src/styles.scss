@@ -19,3 +19,6 @@ a {
   text-decoration: none;
   color: $indigo;
 }
+.cdk-global-scrollblock {
+  overflow-y: hidden;
+}

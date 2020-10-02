@@ -20,14 +20,16 @@ import { LoginDialogComponent } from './login/login.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
-import { MatMenuModule } from '@angular/material/menu'; 
+import { MatMenuModule } from '@angular/material/menu';
+import { RegisterDialogComponent } from './register/register.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListingComponent,
     FilterPipe,
-    LoginDialogComponent
+    LoginDialogComponent,
+    RegisterDialogComponent
   ],
   imports: [
     BrowserModule,

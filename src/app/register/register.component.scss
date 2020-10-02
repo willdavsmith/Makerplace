@@ -1,0 +1,26 @@
+@import "../../theme.scss";
+
+.register-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.register-header {
+    font-weight: 600;
+    color: $indigo;
+}
+
+.register-form {
+    width: 100%;
+}
+
+.register-button {
+    width: 60%;
+    font-weight: 600;
+    width: 60
+}
+
+.register-auth-errortext {
+    color: $error-red;
+}

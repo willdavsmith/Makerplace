@@ -43,9 +43,6 @@ export class LoginDialogComponent {
     }
   }
 
-  async register(): Promise<void> {
-  }
-
   close(): void {
     this.dialogRef.close();
   }

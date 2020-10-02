@@ -10,14 +10,8 @@ export class AuthService {
 
   constructor(private auth: AngularFireAuth) { }
 
-  register(email: string, password: string): void {
-    this.auth.createUserWithEmailAndPassword(email, password)
-      .then(res => {
-
-      })
-      .catch(err => {
-
-      });
+  register(email: string, password: string): Promise<firebase.auth.UserCredential> {
+    return this.auth.createUserWithEmailAndPassword(email, password);
   }
 
   async login(email: string, password: string): Promise<firebase.auth.UserCredential | Observable<string>> {
