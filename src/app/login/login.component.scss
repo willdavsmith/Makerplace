@@ -1,0 +1,55 @@
+@import "../../theme.scss";
+
+.login-card {
+    width: 500px;
+    height: 600px;
+}
+
+.login-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.login-header {
+    font-weight: 600;
+    color: $indigo;
+}
+
+.login-subheader {
+    font-weight: 400;
+    span {
+        font-weight: 600;
+        color: $indigo;
+    }
+}
+
+.login-form {
+    width: 100%;
+}
+
+.login-card-content {
+    margin-top: -100px;
+    width: 100%;
+}
+
+.login-forgot-button {
+    width: 60%;
+    color: $indigo;
+    font-weight: 600;
+}
+
+.login-button {
+    width: 60%;
+    font-weight: 600;
+    width: 60
+}
+
+.login-terms {
+    position: absolute;
+    bottom: 10px;
+}
+
+.login-auth-errortext {
+    color: $error-red;
+}

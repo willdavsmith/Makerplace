@@ -1,0 +1,38 @@
+<mat-dialog-content fxLayout="column" fxLayoutAlign="center center">
+    <h2 class="login-header mat-h2">Sign In</h2>
+    <form [formGroup]="loginForm" fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field class="login-form" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" />
+            <mat-error *ngIf="
+                loginForm.get('email').hasError('email')
+                &&!loginForm.get('email').hasError('required')">
+                <mat-icon>error</mat-icon> Invalid email address
+            </mat-error>
+            <mat-error *ngIf="
+                loginForm.get('email').hasError('required')">
+                <mat-icon>error</mat-icon> Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="login-form" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" />
+            <mat-error *ngIf="
+                loginForm.get('password').hasError('required')">
+                <mat-icon>error</mat-icon> Password is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+    </form>
+    <ng-container *ngIf="errorMsg">
+        <p class="login-auth-errortext">
+            <mat-icon>error</mat-icon> {{ errorMsg }}
+        </p>
+    </ng-container>
+    <a mat-button routerLink="/forgotpassword" class="nohover login-forgot-button" disableRipple=true>Forgot
+        Password&nbsp;&nbsp;&nbsp;&nbsp;<mat-icon>arrow_right_alt</mat-icon></a>
+    <button mat-flat-button [disabled]="!this.loginForm.valid" class="login-button" color="primary"
+        (click)="login()">Login&nbsp;&nbsp;&nbsp;&nbsp;<mat-icon>arrow_right_alt</mat-icon></button>
+    <div class="login-terms" fxLayout="column" fxLayoutAlign="center center">
+        <p>By continuing, you agree to our <a routerLink="/home">Terms of Use & Privacy Policy</a></p>
+    </div>
+</mat-dialog-content>

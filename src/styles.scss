@@ -1,5 +1,6 @@
 @import '~@angular/material/theming';
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import './theme.scss';
 
 @include mat-core();
 
@@ -13,4 +14,8 @@ html, body { height: 100%; }
 body { margin: 0; font-family: "Rubik", sans-serif, "Helvetica Neue", sans-serif; }
 .nohover .mat-button-focus-overlay {
   background-color: transparent;
+}
+a {
+  text-decoration: none;
+  color: $indigo;
 }

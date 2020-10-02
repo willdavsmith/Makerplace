@@ -13,17 +13,24 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ListingComponent } from './listing/listing.component';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './filter/filter.pipe';
+import { MatDialogModule } from '@angular/material/dialog'; 
+import { LoginDialogComponent } from './login/login.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListingComponent,
-    FilterPipe
+    FilterPipe,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
     AppRoutingModule,
     BrowserAnimationsModule,
     StlModelViewerModule,
@@ -35,9 +42,13 @@ import { FilterPipe } from './filter/filter.pipe';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    AngularFireAuthModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LoginDialogComponent]
 })
 export class AppModule { }

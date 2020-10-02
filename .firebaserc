@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "makerplace-app"
+  },
+  "targets": {
+    "makerplace-app": {
+      "hosting": {
+        "makerplace": [
+          "makerplace-app"
+        ]
+      }
+    }
   }
 }
