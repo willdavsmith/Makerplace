@@ -20,6 +20,7 @@ import { LoginDialogComponent } from './login/login.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { MatMenuModule } from '@angular/material/menu'; 
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { environment } from '../environments/environment';
     FormsModule,
     MatDialogModule,
     ReactiveFormsModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],

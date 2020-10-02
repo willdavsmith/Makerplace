@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Listing, LISTINGS } from './listings';
 import { LoginDialogComponent } from './login/login.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { AuthService } from './auth/auth.service';
 
 
 @Component({
@@ -14,7 +15,10 @@ export class AppComponent {
   listings: Listing[] = LISTINGS;
   query: string = '';
   
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    public authService: AuthService
+  ) {}
 
   login() {
     const dialogConfig = new MatDialogConfig();
@@ -25,5 +29,9 @@ export class AppComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 }

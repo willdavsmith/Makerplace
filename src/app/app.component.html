@@ -10,8 +10,22 @@
     <a mat-button routerLink="" class="nohover app-logo" disableRipple=true>Makerplace</a>
   </div>
   <div fxLayout="row" fxLayoutAlign="flex-end center" fxFlex fxLayoutGap="5">
-    <a mat-button (click)="login()" class="nohover app-button" disableRipple=true>Sign In</a>
-    <a mat-stroked-button routerLink="/register" class="app-button app-register-button" color="primary">Register Now</a>
+    <ng-container *ngIf="authService.getUser() | async as user; else showLogin">
+      <button mat-raised-button class="app-button app-upload-button" color="primary">Upload</button>
+      <button mat-icon-button class="app-account-icon" [matMenuTriggerFor]="accountMenu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #accountMenu="matMenu">
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Sign Out</span>
+        </button>
+      </mat-menu>
+    </ng-container>
+    <ng-template #showLogin>
+      <a mat-button (click)="login()" class="nohover app-button" disableRipple=true>Sign In</a>
+      <a mat-stroked-button (click)="register()" class="app-button app-register-button" color="primary">Register Now</a>
+    </ng-template>
   </div>
 </mat-toolbar>
 <div class="app-content" fxLayout="row wrap" fxLayoutGap="16px grid" fxLayoutAlign="flex-start">

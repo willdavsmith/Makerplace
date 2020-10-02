@@ -30,8 +30,8 @@ export class AuthService {
     }
   }
 
-  logout(): void {
-    this.auth.signOut();
+  logout(): Promise<void> {
+    return this.auth.signOut();
   }
 
   getUser(): Observable<firebase.User> {
